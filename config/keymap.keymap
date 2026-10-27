@@ -287,7 +287,7 @@
 
         // &bt BT_SELでBluetooth接続先を変える設定を入れると動作しなくなった
         // Bluetoothの切り替えはBT_NXT BT_PRV で行うようにする
-     　 // 電源ON時は一番最初（おそらく0）に戻る模様
+        // 電源ON時は一番最初（おそらく0）に戻る模様
         CONFIG {
             bindings = <
 &trans  &trans  &trans      &trans  &trans  &trans                          &trans  &trans  &trans             &trans           &trans  &trans
