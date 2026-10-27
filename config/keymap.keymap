@@ -63,10 +63,38 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
+        right_gui_mac {
+            bindings = <&kp RIGHT_GUI>;
+            key-positions = <34 35>;
+            layers = <DEFAULT_MAC>;
+        };
+
+        right_alt_win {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <34 35>;
+            layers = <DEFAULT_WIN>;
+        };
+
+        left_gui_mac {
+            bindings = <&kp LEFT_GUI>;
+            key-positions = <26 27>;
+            layers = <DEFAULT_MAC>;
+        };
+
+        lefr_alt_win {
+            bindings = <&kp LEFT_ALT>;
+            key-positions = <26 27>;
+            layers = <DEFAULT_WIN>;
+        };
+
+        left_config {
+            bindings = <&mo CONFIG>;
+            key-positions = <27 28>;
+        };
+
+        right_config {
+            bindings = <&mo CONFIG>;
+            key-positions = <33 34>;
         };
     };
 
