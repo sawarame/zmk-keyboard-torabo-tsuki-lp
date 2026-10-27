@@ -143,14 +143,14 @@
         bt_0: bt_0 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0 &to 0>;
+            bindings = <&bt BT_SEL 0>, <&to DEFAULT_MAC>;
             label = "BT_0";
         };
 
         bt_1: bt_1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1 &to 0>;
+            bindings = <&bt BT_SEL 1>, <&to DEFAULT_WIN>;
             label = "BT_1";
         };
     };
