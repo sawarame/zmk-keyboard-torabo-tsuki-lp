@@ -68,16 +68,122 @@
         };
     };
 
+
+    macros {
+        // エスケープキーと半角モード
+        escape_lang2: escape_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp LANG2>;
+            label = "ESCAPE_LANG2";
+        };
+
+        // Windowsのランチャー起動
+        alt_space_lang2: alt_space_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(SPACE)) &kp LANG2>;
+            label = "ALT_SPACE_LANG2";
+        };
+
+        // Macのランチャー起動
+        command_space_lang2: command_space_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE) &kp LANG2>;
+            label = "COMMAND_SPACE_LANG2";
+        };
+
+        // アドレスバーにフォーカスして半角にする Windows
+        forcus_addresbar_win: forcus_addresbar_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(L) &kp LANG2 &kp N &kp M &kp SPACE>;
+            label = "FORCUS_ADDRESBAR_WIN";
+        };
+
+        // アドレスバーにフォーカスして半角にする Mac
+        forcus_addresbar_mac: forcus_addresbar_mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(L) &kp LANG2 &kp N &kp M &kp SPACE>;
+            label = "FORCUS_ADDRESBAR_MAC";
+        };
+
+        bt_0: bt_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &to 0>;
+            label = "BT_0";
+        };
+
+        bt_1: bt_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &to 0>;
+            label = "BT_1";
+        };
+
+        bt_2: bt_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &to 1>;
+            label = "BT_2";
+        };
+
+        bt_3: bt_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &to 0>;
+            label = "BT_3";
+        };
+    };
+
+    behaviors {
+        mtl: mtl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTL";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            quick-tap-ms = <300>;
+            tapping-term-ms = <300>;
+        };
+
+        mthp: mthp {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MTHP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <200>;
+            tapping-term-ms = <300>;
+        };
+
+        mt_escape: mt_escape {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_ESCAPE";
+            bindings = <&kp>, <&escape_lang2>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            quick-tap-ms = <200>;
+            tapping-term-ms = <300>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
-        layer_0 {
+        DEFAULT_MAC {
             bindings = <
-&trans     &trans     &trans    &trans    &trans    &trans                                                         &trans       &trans    &trans     &trans    &trans                &trans
-&trans     &kp Q      &kp W     &kp E     &kp R     &kp T                                                          &kp Y        &kp U     &kp I      &kp O     &kp P                 &trans 
-&trans     &kp A      &kp S     &kp D     &kp F     &kp G        &trans                     &trans                 &kp H        &kp J     &kp K      &kp L     &kp SEMI              &trans 
-&trans     &kp Z      &kp X     &kp C     &kp V     &kp B        &kp SPACE                  &kp RET                &kp N        &kp M     &kp COMMA  &kp DOT   &mt RIGHT_SHIFT FSLH  &trans 
-&trans     &kp LCTRL  &kp LGUI  &kp LALT  &kp BSPC  &lt 2 SPACE  &mt LEFT_SHIFT LANGUAGE_1  &mt RSHIFT LANGUAGE_2  &lt 3 ENTER  &kp BSPC  &kp RALT   &kp RGUI  &kp RCTRL             &trans 
+&trans     &trans     &trans          &trans          &trans                       &trans                                                                     &trans                  &trans    &trans               &trans           &trans                 &trans
+&trans     &kp Q      &kp W           &kp E           &kp R                        &kp T                                                                      &kp Y                   &kp U     &kp I                &kp O            &kp P                  &trans 
+&trans     &kp A      &kp S           &kp D           &kp F                        &kp G                     &trans                &trans                     &kp H                   &kp J     &kp K                &kp L            &mt RCTRL SEMI         &trans 
+&trans     &kp Z      &mt LEFT_ALT X  &mt LEFT_GUI C  &kp V                        &kp B                     &kp SPACE             &kp RET                    &kp N                   &kp M     &mt RIGHT_GUI COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
+&trans     &trans     &trans          &trans          &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt_escape LSHIFT 0   &mt RIGHT_SHIFT BACKSPACE  &lt SHORTCUT_MAC ENTER  &trans    &trans               &trans           &trans                 &mo CONFIG 
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -86,13 +192,13 @@
             >;
         };
 
-        layer_1 {
+        DEFAULT_WIN {
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans                  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans  &trans  &trans  &trans  &mkp LCLK  &mkp RCLK  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans  &trans  &trans     &trans     &trans  &trans  &trans
+&trans     &trans          &trans          &trans       &trans                       &trans                                                                     &trans                  &trans    &trans               &trans           &trans                 &trans
+&trans     &mt LEFT_WIN Q  &kp W           &kp E        &kp R                        &kp T                                                                      &kp Y                   &kp U     &kp I                &kp O            &kp RIGHT_WIN P        &trans 
+&trans     &kp A           &kp S           &kp D        &kp F                        &kp G                     &trans                &trans                     &kp H                   &kp J     &kp K                &kp L            &kp RCTRL SEMI         &trans 
+&trans     &kp Z           &mt LEFT_ALT X  &mt LCTRL C  &kp V                        &kp B                     &kp SPACE             &kp RET                    &kp N                   &kp M     &mt RIGHT_GUI COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
+&trans     &trans          &trans          &trans       &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt_escape LSHIFT 0   &mt RIGHT_SHIFT BACKSPACE  &lt SHORTCUT_WIN ENTER  &trans    &trans               &trans           &trans                 &trans 
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -101,13 +207,29 @@
             >;
         };
 
-        layer_2 {
+        MOUSE_AND_FUNCTION {
             bindings = <
-&trans  &trans            &trans            &trans      &trans      &trans                      &trans          &trans         &trans            &trans             &trans         &trans
-&trans  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(N3)  &kp LS(N4)  &kp LS(N5)                  &kp LS(N6)      &kp LS(N7)     &kp LS(N8)        &kp LS(N9)         &kp LS(N0)     &trans
-&trans  &kp N1            &kp N2            &kp N3      &kp N4      &kp N5      &trans  &trans  &kp LEFT_BRACE  &kp MINUS      &kp EQUAL         &kp RIGHT_BRACE    &kp COLON      &trans
-&trans  &kp N6            &kp N7            &kp N8      &kp N9      &kp N0      &trans  &trans  &kp LS(MINUS)   &kp LS(EQUAL)  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-&trans  &trans            &trans            &trans      &trans      &trans      &trans  &trans  &kp TAB         &kp DEL        &trans            &trans             &trans         &trans
+&trans  &trans   &trans   &trans     &trans     &trans                  &trans  &trans    &trans    &trans  &trans   &trans
+&trans  &kp F1   &kp F2   &kp F3     &kp F4     &kp F5                  &kp F6  &kp F7    &kp F8    &kp F9  &kp F10  &trans
+&trans  &kp F11  &kp F12  &kp LANG2  &kp LANG1  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans   &trans
+&trans  &trans   &trans   &trans     &trans     &trans  &trans  &trans  &trans  &mkp MB3  &trans    &trans  &trans   &trans
+&trans  &trans   &trans   &trans     &trans     &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans   &trans
+//#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+//&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+//#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+//&mkp MCLK
+//#endif
+            >;
+        };
+
+        //  コマンドキーやオプションキーと同時押しが必要なキーはここには書かない
+        SCROLL_AND_FUNCTION {
+            bindings = <
+&trans  &trans   &trans   &trans      &trans     &trans                  &trans              &trans              &trans            &trans                 &trans         &trans
+&trans  &kp F1   &kp F2   &kp F3      &kp F4     &kp F5                  &kp F6              &kp F7              &kp F8            &kp F9                 &kp F10        &trans
+&trans  &kp F11  &kp F12  &kp LSHIFT  &kp LCTRL  &trans  &trans  &trans  &kp LEFT_ARROW      &kp DOWN_ARROW      &kp UP_ARROW      &lt 2 RIGHT_ARROW      &trans         &trans
+&trans  &trans   &trans   &trans      &trans     &trans  &trans  &trans  &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(UP_ARROW)  &lt 2 LS(RIGHT_ARROW)  &trans         &trans
+&trans  &trans   &trans   &trans      &trans     &trans  &trans  &trans  &trans              &trans              &trans            &trans                 &trans         &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -116,13 +238,13 @@
             >;
         };
 
-        layer_3 {
+        NUM_AND_SYMBOL {
             bindings = <
-&trans  &trans   &trans   &trans        &trans        &trans                      &trans            &trans     &trans         &trans     &trans      &trans
-&trans  &kp F1   &kp F2   &kp F3        &kp F4        &kp F5                      &kp HOME          &kp PG_UP  &kp PAGE_DOWN  &kp END    &kp ESCAPE  &trans
-&trans  &kp F6   &kp F7   &kp F8        &kp F9        &kp F10     &trans  &trans  &kp LEFT          &kp DOWN   &kp UP_ARROW   &kp RIGHT  &kp TAB     &trans
-&trans  &kp F11  &kp F12  &out OUT_USB  &out OUT_BLE  &bt BT_NXT  &trans  &trans  &kp SINGLE_QUOTE  &kp DQT    &kp GRAVE      &kp TILDE  &kp PIPE    &trans
-&trans  &trans   &trans   &trans        &kp DELETE    &kp TAB     &trans  &trans  &trans            &trans     &trans         &trans     &trans      &trans
+&trans  &trans           &trans            &trans    &trans      &trans                       &trans            &trans             &trans        &trans     &trans         &trans
+&trans  &kp N1           &kp N2            &kp N3    &kp N4      &kp N5                       &kp N6            &kp N7             &kp N8        &kp N9     &kp N0         &trans
+&trans  &kp EXCLAMATION  &kp AT_SIGN       &kp HASH  &kp DOLLAR  &kp PERCENT  &trans  &trans  &kp CARET         &kp AMPERSAND      &kp ASTERISK  &kp LPAR   &kp RPAR       &trans
+&trans  &kp GRAVE        &kp SINGLE_QUOTE  &trans    &trans      &trans       &trans  &trans  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp EQUAL     &kp MINUS  &kp BACKSLASH  &trans
+&trans  &trans           &trans            &trans    &trans      &trans       &trans  &trans  &trans            &trans             &trans        &trans     &trans         &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -130,6 +252,52 @@
 //#endif
             >;
         };
+
+        SHORTCUT_MAC {
+            bindings = <
+&trans  &trans                &trans                 &trans         &trans            &trans                              &trans  &trans                 &trans                    &trans                     &trans             &trans
+&trans  &trans                &trans                 &kp LG(LC(F))  &kp LC(UP_ARROW)  &kp LS(LG(N4))                      &trans  &kp LG(N0)             &kp LG(MINUS)             &kp LG(LS(EQUAL))          &kp LG(BACKSPACE)  &trans
+&trans  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &trans         &trans            &kp LS(LG(LC(N4)))  &trans  &trans  &trans  &forcus_addresbar_mac  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &kp LG(Q)          &trans
+&trans  &kp LG(Z)             &kp LG(X)              &kp LG(C)      &kp LG(V)         &kp LS(LG(N5))      &trans  &trans  &trans  &command_space_lang2   &kp LC(LEFT_ARROW)        &kp LC(RIGHT_ARROW)        &trans             &trans
+&trans  &trans                &trans                 &trans         &trans            &trans              &trans  &trans  &trans  &trans                 &trans                    &trans                     &trans             &trans
+//#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+//&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+//#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+//&mkp MCLK
+//#endif
+            >;
+        };
+
+        SHORTCUT_WIN {
+            bindings = <
+&trans  &trans              &trans           &trans     &trans       &trans                         &trans     &trans                 &trans                  &trans                   &trans      &trans
+&trans  &trans              &trans           &trans     &kp LG(TAB)  &trans                         &trans     &kp LC(N0)             &kp LC(MINUS)           &kp LC(EQUAL)            &kp DELETE  &trans
+&trans  &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))  &trans     &trans       &kp LG(LS(S))  &trans  &trans  &trans     &forcus_addresbar_win  &kp LS(LC(TAB))         &kp LC(TAB)              &kp LA(F4)  &trans
+&trans  &kp LC(Z)           &kp LC(X)        &kp LC(C)  &kp LC(V)    &trans         &trans  &trans  &kp LG(N)  &alt_space_lang2       &kp LG(LC(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))  &trans      &trans
+&trans  &trans              &trans           &trans     &trans       &trans         &trans  &trans  &trans     &trans                 &trans                  &trans                   trans       &trans
+//#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+//&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+//#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+//&mkp MCLK
+//#endif
+            >;
+        };
+
+        CONFIG {
+            bindings = <
+&trans  &trans         &trans         &trans         &trans         &trans                         &trans  &trans  &trans             &trans           &trans  &trans
+&trans  &bt_0          &bt_1          &bt_2          &bt_3          &trans                         &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  &trans  &trans  &trans  &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&trans  &bt BT_CLR     &trans         &trans         &trans         &trans         &trans  &trans  &trans  &trans  &kp C_BRI_DN       &kp C_BRI_UP     &trans  &trans
+&trans  &trans         &trans         &trans         &trans         &trans         &trans  &trans  &trans  &trans  &trans             &trans           &trans  &trans
+//#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
+//&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
+//#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
+//&mkp MCLK
+//#endif
+            >;
+        };
+
     };
 };
 
