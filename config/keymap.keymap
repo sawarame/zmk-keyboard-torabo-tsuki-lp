@@ -261,7 +261,7 @@
 &trans  &trans                &trans                 &kp LG(LC(F))  &kp LC(UP_ARROW)  &kp LS(LG(N4))                      &trans  &kp LG(N0)             &kp LG(MINUS)             &kp LG(LS(EQUAL))          &kp LG(BACKSPACE)  &trans
 &trans  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &trans         &trans            &kp LS(LG(LC(N4)))  &trans  &trans  &trans  &forcus_addresbar_mac  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &kp LG(Q)          &trans
 &trans  &kp LG(Z)             &kp LG(X)              &kp LG(C)      &kp LG(V)         &kp LS(LG(N5))      &trans  &trans  &trans  &command_space_lang2   &kp LC(LEFT_ARROW)        &kp LC(RIGHT_ARROW)        &trans             &trans
-&trans  &trans                &trans                 &trans         &trans            &trans              &trans  &trans  &trans  &trans                 &trans                    &trans                     &trans             &trans
+&trans  &trans                &trans                 &trans         &trans            &kp LG(N4)          &trans  &trans  &trans  &trans                 &trans                    &trans                     &trans             &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -285,6 +285,9 @@
             >;
         };
 
+        // &bt BT_SELでBluetooth接続先を変える設定を入れると動作しなくなった
+        // Bluetoothの切り替えはBT_NXT BT_PRV で行うようにする
+     　 // 電源ON時は一番最初（おそらく0）に戻る模様
         CONFIG {
             bindings = <
 &trans  &trans  &trans      &trans  &trans  &trans                          &trans  &trans  &trans             &trans           &trans  &trans
