@@ -276,7 +276,7 @@
 &trans  &trans              &trans           &trans     &kp LG(TAB)  &trans                         &trans     &kp LC(N0)             &kp LC(MINUS)           &kp LC(EQUAL)            &kp DELETE  &trans
 &trans  &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))  &trans     &trans       &kp LG(LS(S))  &trans  &trans  &trans     &forcus_addresbar_win  &kp LS(LC(TAB))         &kp LC(TAB)              &kp LA(F4)  &trans
 &trans  &kp LC(Z)           &kp LC(X)        &kp LC(C)  &kp LC(V)    &trans         &trans  &trans  &kp LG(N)  &alt_space_lang2       &kp LG(LC(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))  &trans      &trans
-&trans  &trans              &trans           &trans     &trans       &trans         &trans  &trans  &trans     &trans                 &trans                  &trans                   trans       &trans
+&trans  &trans              &trans           &trans     &trans       &trans         &trans  &trans  &trans     &trans                 &trans                  &trans                   &trans      &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
