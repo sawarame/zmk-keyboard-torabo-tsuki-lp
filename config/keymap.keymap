@@ -257,7 +257,7 @@
 
         SHORTCUT_MAC {
             bindings = <
-&trans  &trans                &trans                 &trans         &trans            &trans                              &trans  &trans                 &trans                    &trans                     &trans             &trans
+&trans  &kp LG(LC(Q))         &trans                 &trans         &trans            &trans                              &trans  &trans                 &trans                    &trans                     &trans             &trans
 &trans  &trans                &trans                 &kp LG(LC(F))  &kp LC(UP_ARROW)  &kp LS(LG(N4))                      &trans  &kp LG(N0)             &kp LG(MINUS)             &kp LG(LS(EQUAL))          &kp LG(BACKSPACE)  &trans
 &trans  &kp LG(LEFT_BRACKET)  &kp LG(RIGHT_BRACKET)  &trans         &trans            &kp LS(LG(LC(N4)))  &trans  &trans  &trans  &forcus_addresbar_mac  &kp LS(LG(LEFT_BRACKET))  &kp LS(LG(RIGHT_BRACKET))  &kp LG(Q)          &trans
 &trans  &kp LG(Z)             &kp LG(X)              &kp LG(C)      &kp LG(V)         &kp LS(LG(N5))      &trans  &trans  &trans  &command_space_lang2   &kp LC(LEFT_ARROW)        &kp LC(RIGHT_ARROW)        &trans             &trans
@@ -272,11 +272,11 @@
 
         SHORTCUT_WIN {
             bindings = <
-&trans  &trans              &trans           &trans     &trans       &trans                         &trans     &trans                 &trans                  &trans                   &trans      &trans
+&trans  &kp LG(L)           &trans           &trans     &trans       &trans                         &trans     &trans                 &trans                  &trans                   &trans      &trans
 &trans  &trans              &trans           &trans     &kp LG(TAB)  &trans                         &trans     &kp LC(N0)             &kp LC(MINUS)           &kp LC(EQUAL)            &kp DELETE  &trans
 &trans  &kp LA(LEFT_ARROW)  &kp LS(LC(TAB))  &trans     &trans       &kp LG(LS(S))  &trans  &trans  &trans     &forcus_addresbar_win  &kp LS(LC(TAB))         &kp LC(TAB)              &kp LA(F4)  &trans
 &trans  &kp LC(Z)           &kp LC(X)        &kp LC(C)  &kp LC(V)    &trans         &trans  &trans  &kp LG(N)  &alt_space_lang2       &kp LG(LC(LEFT_ARROW))  &kp LG(LC(RIGHT_ARROW))  &trans      &trans
-&trans  &trans              &trans           &trans     &trans       &trans      &trans  &trans  &trans     &trans                 &trans                  &trans                   &trans      &trans
+&trans  &trans              &trans           &trans     &trans       &trans         &trans  &trans  &trans     &trans                 &trans                  &trans                   &trans      &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
