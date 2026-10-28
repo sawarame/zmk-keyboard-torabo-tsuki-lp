@@ -312,7 +312,7 @@
         layers = <SCROLL_AND_FUNCTION>;                                                                                                                                         
         input-processors = <&zip_xy_to_scroll_mapper>,
                            <&zip_scroll_transform (INPUT_TRANSFORM_X_INVERT)>,
-                           <&zip_scroll_scaler 1 8>;                                                                                                
+                           <&zip_scroll_scaler 1 6>;                                                                                                
     };                                                                                                                                                                          
 };   
 
