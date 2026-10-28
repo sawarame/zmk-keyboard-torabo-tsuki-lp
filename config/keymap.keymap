@@ -290,11 +290,11 @@
         // 電源ON時は一番最初（おそらく0）に戻る模様
         CONFIG {
             bindings = <
-&trans  &trans  &trans      &trans  &trans      &trans                               &trans           &trans  &trans             &trans           &trans  &trans
-&trans  &trans  &trans      &trans  &trans      &trans                               &trans           &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
-&trans  &trans  &trans      &trans  &trans      &trans      &trans  &trans           &trans           &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
-&trans  &trans  &bt BT_CLR  &trans  &trans      &trans      &trans  &trans           &trans           &trans  &kp C_BRI_DN       &kp C_BRI_UP     &trans  &trans
-&trans  &trans  &trans      &trans  &bt BT_PRV  &bt BT_NXT  &trans  &to DEFAULT_MAC  &to DEFAULT_WIN  &trans  &trans             &trans           &trans  &trans
+&trans  &trans  &trans      &trans  &trans      &trans                                &trans           &trans  &trans             &trans           &trans  &trans
+&trans  &trans  &trans      &trans  &trans      &trans                                &trans           &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&trans  &trans  &trans      &trans  &trans      &trans  &trans       &trans           &trans           &trans  &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &trans  &trans
+&trans  &trans  &bt BT_CLR  &trans  &trans      &trans  &trans       &trans           &trans           &trans  &kp C_BRI_DN       &kp C_BRI_UP     &trans  &trans
+&trans  &trans  &trans      &trans  &bt BT_PRV  &trans  &bt BT_NXT   &to DEFAULT_MAC  &to DEFAULT_WIN  &trans  &trans             &trans           &trans  &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
