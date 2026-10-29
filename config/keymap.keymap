@@ -211,11 +211,11 @@
 
         MOUSE_AND_FUNCTION {
             bindings = <
-&trans  &trans   &trans   &trans  &trans     &trans                     &trans  &trans    &trans    &trans  &trans   &trans
-&trans  &kp F1   &kp F2   &kp F3  &kp F4     &kp F5                     &kp F6  &kp F7    &kp F8    &kp F9  &kp F10  &trans
-&trans  &kp F11  &kp F12  &trans  &trans     &trans     &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans   &trans
-&trans  &trans   &trans   &trans  &trans     &trans     &trans  &trans  &trans  &mkp MB3  &trans    &trans  &trans   &trans
-&trans  &trans   &trans   &trans  &kp LANG2  &kp LANG1  &trans  &trans  &trans  &trans    &trans    &trans  &trans   &trans
+&trans  &trans   &trans   &trans  &trans  &trans                     &trans  &trans    &trans    &trans  &trans   &trans
+&trans  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5                     &kp F6  &kp F7    &kp F8    &kp F9  &kp F10  &trans
+&trans  &kp F11  &kp F12  &trans  &trans  &trans     &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans   &trans
+&trans  &trans   &trans   &trans  &trans  &trans     &trans  &trans  &trans  &mkp MB3  &trans    &trans  &trans   &trans
+&trans  &trans   &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans   &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
