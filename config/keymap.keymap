@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
-#include <dt-bindings/zmk/input_transform.h>                                                                                                                                    
+#include <dt-bindings/zmk/input_transform.h> 
 #include <input/processors.dtsi>   
 
 // ロータリーエンコーダーは使わないのでコメントアウト
@@ -181,11 +181,11 @@
 
         DEFAULT_MAC {
             bindings = <
-&trans     &trans     &trans          &trans          &trans                       &trans                                                                     &trans                  &trans    &trans               &trans           &trans                 &trans
-&trans     &kp Q      &kp W           &kp E           &kp R                        &kp T                                                                      &kp Y                   &kp U     &kp I                &kp O            &kp P                  &trans 
-&trans     &kp A      &kp S           &kp D           &kp F                        &kp G                     &trans                &trans                     &kp H                   &kp J     &kp K                &lt MOUSE L      &mt RCTRL SEMI         &trans 
-&trans     &kp Z      &mt LEFT_ALT X  &mt LEFT_GUI C  &kp V                        &kp B                     &trans                &trans                     &kp N                   &kp M     &mt RIGHT_GUI COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
-&trans     &trans     &trans          &trans          &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt_escape LSHIFT 0   &mt RIGHT_SHIFT BACKSPACE  &lt SHORTCUT_MAC ENTER  &trans    &trans               &trans           &trans                 &mo CONFIG 
+&trans     &trans     &trans          &trans          &trans                       &trans                                                            &trans                  &trans    &trans               &trans           &trans                 &trans
+&trans     &kp Q      &kp W           &kp E           &kp R                        &kp T                                                             &kp Y                   &kp U     &kp I                &kp O            &kp P                  &trans 
+&trans     &kp A      &kp S           &kp D           &kp F                        &kp G                     &trans            &trans                &kp H                   &kp J     &kp K                &lt MOUSE L      &mt RCTRL SEMI         &trans 
+&trans     &kp Z      &mt LEFT_ALT X  &mt LEFT_GUI C  &kp V                        &kp B                     &trans            &trans                &kp N                   &kp M     &mt RIGHT_GUI COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
+&trans     &trans     &trans          &trans          &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt LSHIFT MINUS  &mt RSHIFT BACKSPACE  &lt SHORTCUT_MAC ENTER  &trans    &trans               &trans           &trans                 &mo CONFIG 
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -196,11 +196,11 @@
 
         DEFAULT_WIN {
             bindings = <
-&trans     &trans          &trans          &trans       &trans                       &trans                                                                     &trans                  &trans    &trans           &trans           &trans                 &trans
-&trans     &mt LEFT_WIN Q  &kp W           &kp E        &kp R                        &kp T                                                                      &kp Y                   &kp U     &kp I            &kp O            &mt RIGHT_WIN P        &trans 
-&trans     &kp A           &kp S           &kp D        &kp F                        &kp G                     &trans                &trans                     &kp H                   &kp J     &kp K            &lt MOUSE L      &mt RCTRL SEMI         &trans 
-&trans     &kp Z           &mt LEFT_ALT X  &mt LCTRL C  &kp V                        &kp B                     &trans                &trans                     &kp N                   &kp M     &mt RCTRL COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
-&trans     &trans          &trans          &trans       &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt_escape LSHIFT 0   &mt RIGHT_SHIFT BACKSPACE  &lt SHORTCUT_WIN ENTER  &trans    &trans           &trans           &trans                 &trans 
+&trans     &trans          &trans          &trans       &trans                       &trans                                                            &trans                  &trans    &trans           &trans           &trans                 &trans
+&trans     &mt LEFT_WIN Q  &kp W           &kp E        &kp R                        &kp T                                                             &kp Y                   &kp U     &kp I            &kp O            &mt RIGHT_WIN P        &trans 
+&trans     &kp A           &kp S           &kp D        &kp F                        &kp G                     &trans            &trans                &kp H                   &kp J     &kp K            &lt MOUSE L      &mt RCTRL SEMI         &trans 
+&trans     &kp Z           &mt LEFT_ALT X  &mt LCTRL C  &kp V                        &kp B                     &trans            &trans                &kp N                   &kp M     &mt RCTRL COMMA  &mt RALT PERIOD  &mt RIGHT_SHIFT SLASH  &trans 
+&trans     &trans          &trans          &trans       &lt SCROLL_AND_FUNCTION TAB  &lt NUM_AND_SYMBOL SPACE  &mt LSHIFT MINUS  &mt RSHIFT BACKSPACE  &lt SHORTCUT_WIN ENTER  &trans    &trans           &trans           &trans                 &trans 
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
@@ -227,11 +227,11 @@
         //  コマンドキーやオプションキーと同時押しが必要なキーはここには書かない
         SCROLL_AND_FUNCTION {
             bindings = <
-&trans  &trans   &trans   &trans      &trans     &trans                     &trans              &trans              &trans            &trans                 &trans         &trans
-&trans  &kp F1   &kp F2   &kp F3      &kp F4     &kp F5                     &kp F6              &kp F7              &kp F8            &kp F9                 &kp F10        &trans
-&trans  &kp F11  &kp F12  &kp LSHIFT  &kp LCTRL  &trans  &trans  &trans     &kp LEFT_ARROW      &kp DOWN_ARROW      &kp UP_ARROW      &lt 2 RIGHT_ARROW      &trans         &trans
-&trans  &trans   &trans   &trans      &trans     &trans  &trans  &trans     &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(UP_ARROW)  &lt 2 LS(RIGHT_ARROW)  &trans         &trans
-&trans  &trans   &trans   &trans      &trans     &trans  &trans  &kp LANG2  &kp LANG1           &trans              &trans            &trans                 &trans         &trans
+&trans  &trans         &trans   &trans      &trans     &trans                     &trans              &trans              &trans            &trans                 &trans         &trans
+&trans  &kp F1         &kp F2   &kp F3      &kp F4     &kp F5                     &kp F6              &kp F7              &kp F8            &kp F9                 &kp F10        &trans
+&trans  &kp F11        &kp F12  &kp LSHIFT  &kp LCTRL  &trans  &trans  &trans     &kp LEFT_ARROW      &kp DOWN_ARROW      &kp UP_ARROW      &lt 2 RIGHT_ARROW      &trans         &trans
+&trans  &escape_lang2  &trans   &trans      &trans     &trans  &trans  &trans     &kp LS(LEFT_ARROW)  &kp LS(DOWN_ARROW)  &kp LS(UP_ARROW)  &lt 2 LS(RIGHT_ARROW)  &trans         &trans
+&trans  &trans         &trans   &trans      &trans     &trans  &trans  &kp LANG2  &kp LANG1           &trans              &trans            &trans                 &trans         &trans
 //#if defined(TORABO_TSUKI_LP_KSCAN_4_DIRECTION_SWITCH)
 //&msc SCRL_UP &msc SCRL_DOWN &msc SCRL_LEFT &msc SCRL_RIGHT &mkp MCLK
 //#elif defined(TORABO_TSUKI_LP_INPUT_HIRES_DIAL)
