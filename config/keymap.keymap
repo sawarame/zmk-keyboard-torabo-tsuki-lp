@@ -99,13 +99,13 @@
 
         lock_mac {
             bindings = <&kp LG(LC(Q))>;
-            key-positions = <42 43>;
+            key-positions = <44 45>;
             layers = <DEFAULT_MAC>;
         };
 
         lock_win {
             bindings = <&kp LG(L)>;
-            key-positions = <42 43>;
+            key-positions = <44 45>;
             layers = <DEFAULT_WIN>;
         };
     };
